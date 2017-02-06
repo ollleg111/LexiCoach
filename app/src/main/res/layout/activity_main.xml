@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="ua.dp.oleg.maliy.lexicoach.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_weight="90"
+        android:background="@drawable/boarder_first"
+        android:orientation="vertical"
+        android:weightSum="100"
+        >
+
+        <TextView
+            android:id="@+id/firstPart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"/>
+
+        <RelativeLayout
+            android:id="@+id/secondPart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/big"
+            android:layout_weight="50"
+            android:background="@drawable/boarder_second"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/firstWord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="35sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/buttonBell"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="-6dp"
+                android:layout_marginRight="-6dp"
+                android:background="@drawable/button_background"
+                android:src="@drawable/ic_action_bell"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/add"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/keyAddColor"
+                />
+
+            <Button
+                android:id="@+id/own"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/keyOwnColor"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/box"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

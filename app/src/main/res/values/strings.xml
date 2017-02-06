@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">LexiCoach</string>
+
+    <string name="show_timer">Timer</string>
+    <string name="show_pen">Pen</string>
+    <string name="show_menu">Menu</string>
+
+</resources>
