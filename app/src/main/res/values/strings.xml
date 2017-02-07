@@ -6,4 +6,7 @@
     <string name="show_pen">Pen</string>
     <string name="show_menu">Menu</string>
 
+    <string name="buttonAdd">Add</string>
+    <string name="buttonOwn">Own</string>
+
 </resources>

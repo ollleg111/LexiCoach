@@ -21,10 +21,12 @@
         >
 
         <TextView
-            android:id="@+id/firstPart"
+            android:id="@+id/englishWord"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="50"/>
+            android:layout_weight="50"
+            android:textColor="@color/grey"
+            />
 
         <RelativeLayout
             android:id="@+id/secondPart"
@@ -41,7 +43,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/firstWord"
+                    android:id="@+id/indianWord"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="35sp"/>
@@ -78,35 +80,42 @@
         android:layout_weight="10">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:weightSum="100"
             android:orientation="horizontal"
             >
 
             <Button
-                android:id="@+id/add"
-
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonAdd"
+                android:text="@string/buttonAdd"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/keyAddColor"
+                android:textSize="25sp"
+                android:layout_weight="50"
                 />
 
             <Button
-                android:id="@+id/own"
-
-                android:layout_width="wrap_content"
+                android:id="@+id/buttonOwn"
+                android:text="@string/buttonOwn"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/keyOwnColor"/>
+                android:background="@color/keyOwnColor"
+                android:textSize="25sp"
+                android:layout_weight="50"/>
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/box"
+        <ImageButton
+            android:id="@+id/buttonBox"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="center"/>
+            />
     </RelativeLayout>
 
 
