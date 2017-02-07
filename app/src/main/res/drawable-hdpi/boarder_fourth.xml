@@ -3,13 +3,14 @@
 
     <!-- view background color -->
     <solid
-        android:color="@color/keyAddColor" >
+        android:color="@color/keyOwnColor" >
     </solid>
 
     <!-- view border color and width -->
     <!-- The radius makes the corners rounded -->
     <corners
-        android:topLeftRadius="14dp"
+
+        android:topRightRadius="14dp"
         >
     </corners>
 

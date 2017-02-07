@@ -125,9 +125,9 @@
             <Button
                 android:id="@+id/buttonAdd"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@color/keyAddColor"
+                android:background="@drawable/boarder_third"
                 android:text="@string/button_Add"
                 android:textSize="25sp"
                 android:textColor="@color/white"/>
@@ -135,9 +135,9 @@
             <Button
                 android:id="@+id/buttonOwn"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@color/keyOwnColor"
+                android:background="@drawable/boarder_fourth"
                 android:text="@string/button_Own"
                 android:textSize="25sp"
                 android:textColor="@color/white"/>
@@ -145,12 +145,13 @@
 
         <ImageButton
             android:id="@+id/buttonBox"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_box_layer_list"
             android:gravity="center"
-            android:src="@drawable/ic_action_box"/>
+            android:src="@drawable/ic_action_box"
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
 </LinearLayout>
