@@ -6,7 +6,14 @@
     <string name="show_pen">Pen</string>
     <string name="show_menu">Menu</string>
 
-    <string name="buttonAdd">Add</string>
-    <string name="buttonOwn">Own</string>
+    <string name="button_Add">Add</string>
+    <string name="button_Own">Own</string>
+
+    <string name="englishWordOne">Key</string>
+
+    <string name="hebrewWordZero">חלון</string>
+    <string name="hebrewWordOne">מפתח</string>
+    <string name="hebrewWordTwo">טירה</string>
+    <string name="hebrewWordThree">דלת</string>
 
 </resources>
