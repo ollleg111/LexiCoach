@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-//    public static final String AVATAR_URL = "http://lorempixel.com/200/200/people/1/";
+//    public static final String AVATAR_URL = ".dp.ua";
 
 
     private DrawerLayout drawerLayout;
@@ -55,6 +56,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+//        return super.onOptionsItemSelected(item);
+
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.menu_item_show_pen:
+                Toast.makeText(MainActivity.this, getString(R.string.show_pen), Toast.LENGTH_SHORT).show();
+//                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+//                        startActivity(i);
+//                        finish();
+                break;
+            case R.id.menu_item_show_timer:
+                Toast.makeText(MainActivity.this, getString(R.string.show_timer), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+//        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_horisontal_list, menu);
+        return true;
+    }
+
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
     }
@@ -86,18 +117,55 @@ public class MainActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
 
                 switch (id) {
-                    case R.id.buttonAdd:
-                        Toast.makeText(MainActivity.this, getString(R.string.button_Add), Toast.LENGTH_SHORT).show();
+                    case R.id.menu_item_show_news:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_news), Toast.LENGTH_SHORT).show();
 //                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
 //                        startActivity(i);
-                        finish();
+//                        finish();
                         break;
-                    case R.id.buttonOwn:
-                        Toast.makeText(MainActivity.this, getString(R.string.button_Own), Toast.LENGTH_SHORT).show();
+                    case R.id.menu_item_show_feedback:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_feedback), Toast.LENGTH_SHORT).show();
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
-                        finish();
+//                        finish();
                         break;
+                    case R.id.menu_item_show_messages:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_messages), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                        break;
+                    case R.id.menu_item_show_friends:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_friends), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                        break;
+                    case R.id.menu_item_show_communities:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_communities), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                        break;
+                    case R.id.menu_item_show_bookmarks:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_bookmarks), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                        break;
+                    case R.id.menu_item_show_search:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_search), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                        break;
+                    case R.id.menu_item_show_settings:
+                        Toast.makeText(MainActivity.this, getString(R.string.show_settings), Toast.LENGTH_SHORT).show();
+//                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
+//                        startActivity(j);
+//                        finish();
+                        break;
+
                 }
                 return true;
             }

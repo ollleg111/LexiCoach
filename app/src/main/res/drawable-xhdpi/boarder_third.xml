@@ -6,6 +6,11 @@
         android:color="@color/keyAddColor" >
     </solid>
 
+    <!--<stroke-->
+        <!--android:width="2dp"-->
+        <!--android:color="@color/greyLight" >-->
+    <!--</stroke>-->
+
     <!-- view border color and width -->
     <!-- The radius makes the corners rounded -->
     <corners
