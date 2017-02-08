@@ -1,6 +1,5 @@
 package ua.dp.oleg.maliy.lexicoach;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,13 +11,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-//    public static final String AVATAR_URL = ".dp.ua";
-
+public class MainActivity extends AppCompatActivity{
 
     private DrawerLayout drawerLayout;
     private View content;
@@ -26,24 +27,70 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ActionBarDrawerToggle drawerToggle;
 
+    @BindView(R.id.buttonAdd)
+    protected Button buttonAdd;
+    @BindView(R.id.buttonOwn)
+    protected Button buttonOwn;
+    @BindView(R.id.buttonBell)
+    protected ImageButton buttonBell;
+    @BindView(R.id.buttonBox)
+    protected ImageButton buttonBox;
+    @BindView(R.id.englishWord)
+    protected CustomTextView englishWord;
+    @BindView(R.id.hebrewWordZero)
+    protected CustomTextView hebrewWordZero;
+    @BindView(R.id.hebrewWordOne)
+    protected CustomTextView hebrewWordOne;
+    @BindView(R.id.hebrewWordTwo)
+    protected CustomTextView hebrewWordTwo;
+    @BindView(R.id.hebrewWordThree)
+    protected CustomTextView hebrewWordThree;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_dashboard);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         initToolbar();
         setupDrawerLayout();
 
+        ButterKnife.bind(this);
+
         content = findViewById(R.id.content);
         drawerToggle = setupDrawerToggle();
 
+        englishWord.setText(getString(R.string.englishWordOne));
+
+        hebrewWordZero.setText(getString(R.string.hebrewWordZero));
+        hebrewWordOne.setText(getString(R.string.hebrewWordOne));
+        hebrewWordTwo.setText(getString(R.string.hebrewWordTwo));
+        hebrewWordThree.setText(getString(R.string.hebrewWordThree));
+
 //        final ImageView avatar = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.avatar);
-//        Picasso.with(this).load(AVATAR_URL).transform(new CircleTransform()).into(avatar);
+//        Picasso.with(this).load(Const.AVATAR_URL).transform(new CircleTransform()).into(avatar);
 
     }
 
+    @OnClick(R.id.buttonAdd)
+    void buttonAdd() {
+        Toast.makeText(MainActivity.this, getString(R.string.button_add), Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.buttonOwn)
+    void buttonOwn() {
+        Toast.makeText(MainActivity.this, getString(R.string.button_own), Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.buttonBell)
+    void buttonBell() {
+        Toast.makeText(MainActivity.this, getString(R.string.button_bell), Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.buttonBox)
+    void buttonBox() {
+        Toast.makeText(MainActivity.this, getString(R.string.button_box), Toast.LENGTH_SHORT).show();
+    }
 
     private void initToolbar() {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -165,7 +212,6 @@ public class MainActivity extends AppCompatActivity {
 //                        startActivity(j);
 //                        finish();
                         break;
-
                 }
                 return true;
             }

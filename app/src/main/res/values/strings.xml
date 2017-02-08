@@ -1,9 +1,11 @@
 <resources>
 
-    <string name="app_name">""</string>
+    <string name="app_name">"LexiCoach"</string>
 
-    <string name="button_Add">Add</string>
-    <string name="button_Own">Own</string>
+    <string name="button_add">Add</string>
+    <string name="button_own">Own</string>
+    <string name="button_bell">Bell</string>
+    <string name="button_box">Box</string>
 
     <string name="englishWordOne">Key</string>
 
@@ -16,7 +18,7 @@
     <string name="drawer_close">Close</string>
 
     <string name="user_name">Tomer Bahar</string>
-    <string name="user_email">teacherTomerBahar@gmail.com</string>
+    <string name="user_email">theTeacherTomer@gmail.com</string>
 
     <string name="show_news">News</string>
     <string name="show_feedback">Feedback</string>
@@ -27,6 +29,6 @@
     <string name="show_search">Search</string>
     <string name="show_settings">Settings</string>
     <string name="show_timer">Timer</string>
-    <string name="show_pen">Pen</string>
+    <string name="show_pen">Notes</string>
 
 </resources>

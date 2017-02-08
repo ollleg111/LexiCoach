@@ -5,70 +5,50 @@
 
     <item
         android:id="@+id/menu_item_show_news"
-        android:icon="@drawable/ic_menu_grey"
+        android:icon="@drawable/ic_news_grey"
         android:title="@string/show_news"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_feedback"
-        android:icon="@drawable/ic_pen_grey"
+        android:icon="@drawable/ic_feedback_grey"
         android:title="@string/show_feedback"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_messages"
-        android:icon="@drawable/ic_timer_grey"
+        android:icon="@drawable/ic_messages_grey"
         android:title="@string/show_messages"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_friends"
-        android:icon="@drawable/ic_timer_grey"
+        android:icon="@drawable/ic_friends_grey"
         android:title="@string/show_friends"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_communities"
-        android:icon="@drawable/ic_timer_grey"
+        android:icon="@drawable/ic_communities_grey"
         android:title="@string/show_communities"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_bookmarks"
-        android:icon="@drawable/ic_timer_grey"
+        android:icon="@drawable/ic_bookmarks_grey"
         android:title="@string/show_bookmarks"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_search"
-        android:icon="@drawable/ic_timer_grey"
+        android:icon="@drawable/ic_search_grey"
         android:title="@string/show_search"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_item_show_settings"
-        android:icon="@drawable/ic_timer_grey"
+        android:icon="@drawable/ic_settings_grey"
         android:title="@string/show_settings"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
 </menu>
-
-
-    <!--<item-->
-    <!--android:id="@+id/menu_item_show_menu"-->
-    <!--android:icon="@drawable/ic_menu_grey"-->
-    <!--android:title="@string/show_menu"-->
-    <!--app:showAsAction="always"/>-->
-
-    <!--<item-->
-    <!--android:id="@+id/menu_item_show_pen"-->
-    <!--android:icon="@drawable/ic_pen_grey"-->
-    <!--android:title="@string/show_pen"-->
-    <!--app:showAsAction="always"/>-->
-
-    <!--<item-->
-    <!--android:id="@+id/menu_item_show_timer"-->
-    <!--android:icon="@drawable/ic_timer_grey"-->
-    <!--android:title="@string/show_timer"-->
-    <!--app:showAsAction="always" />-->
-
