@@ -4,7 +4,6 @@
 
     <string name="show_timer">Timer</string>
     <string name="show_pen">Pen</string>
-    <string name="show_menu">Menu</string>
 
     <string name="button_Add">Add</string>
     <string name="button_Own">Own</string>
@@ -15,5 +14,20 @@
     <string name="hebrewWordOne">מפתח</string>
     <string name="hebrewWordTwo">טירה</string>
     <string name="hebrewWordThree">דלת</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="user_name">Tomer Bahar</string>
+    <string name="user_email">teacherTomerBahar@gmail.com</string>
+
+    <string name="show_news">News</string>
+    <string name="show_feedback">Feedback</string>
+    <string name="show_messages">Messages</string>
+    <string name="show_friends">Friends</string>
+    <string name="show_communities">Communities</string>
+    <string name="show_bookmarks">Bookmarks</string>
+    <string name="show_search">Search</string>
+    <string name="show_settings">Settings</string>
 
 </resources>
