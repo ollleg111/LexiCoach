@@ -1,0 +1,21 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+
+    <!-- view background color -->
+    <solid
+        android:color="@color/keyAddColor">
+    </solid>
+
+    <padding/>
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/keyAddColor"/>
+
+    <!-- view border color and width -->
+    <!-- The radius makes the corners rounded -->
+    <corners android:topLeftRadius="14dp">
+
+    </corners>
+
+</shape>

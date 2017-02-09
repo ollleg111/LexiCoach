@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(null);
 
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_grey);
@@ -124,48 +126,56 @@ public class MainActivity extends AppCompatActivity {
                 switch (id) {
                     case R.id.menu_item_show_news:
                         Toast.makeText(MainActivity.this, getString(R.string.show_news), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
 //                        startActivity(i);
 //                        finish();
                         break;
                     case R.id.menu_item_show_feedback:
                         Toast.makeText(MainActivity.this, getString(R.string.show_feedback), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_messages:
                         Toast.makeText(MainActivity.this, getString(R.string.show_messages), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_friends:
                         Toast.makeText(MainActivity.this, getString(R.string.show_friends), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_communities:
                         Toast.makeText(MainActivity.this, getString(R.string.show_communities), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_bookmarks:
                         Toast.makeText(MainActivity.this, getString(R.string.show_bookmarks), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_search:
                         Toast.makeText(MainActivity.this, getString(R.string.show_search), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_settings:
                         Toast.makeText(MainActivity.this, getString(R.string.show_settings), Toast.LENGTH_SHORT).show();
+                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
@@ -174,5 +184,18 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
+    }
+    public void setDrawerState(boolean isEnabled) {
+        if (isEnabled) {
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        }
+        else {
+            if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+                drawerLayout.closeDrawer(GravityCompat.END);
+            }
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
     }
 }

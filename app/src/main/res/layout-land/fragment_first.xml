@@ -113,7 +113,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="@dimen/action_button_minus"
                 android:layout_marginRight="@dimen/action_button_minus"
-                android:background="@drawable/button_background"
+                android:background="@drawable/button_bell_background"
                 android:src="@drawable/ic_action_bell"/>
 
         </RelativeLayout>
@@ -137,7 +137,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@drawable/boarder_third"
+                android:background="@drawable/button_add_boarder"
                 android:text="@string/button_add"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -148,7 +148,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@drawable/boarder_fourth"
+                android:background="@drawable/button_own_boarder"
                 android:text="@string/button_own"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -161,7 +161,7 @@
             android:layout_height="56dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/button_box_layer_list"
+            android:background="@drawable/button_box_c_normal_layer_list"
             android:gravity="center"
             android:src="@drawable/ic_action_box"/>
     </RelativeLayout>

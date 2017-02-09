@@ -8,14 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.buttonAdd)
     protected Button buttonAdd;
     @BindView(R.id.buttonOwn)
@@ -34,6 +36,7 @@ public class FirstFragment extends Fragment {
     protected CustomTextView hebrewWordTwo;
     @BindView(R.id.hebrewWordThree)
     protected CustomTextView hebrewWordThree;
+
     public FirstFragment() {
     }
 
@@ -48,7 +51,7 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_first, container, false);
-        ButterKnife.bind(this,rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -62,6 +65,10 @@ public class FirstFragment extends Fragment {
         hebrewWordTwo.setText(getString(R.string.hebrewWordTwo));
         hebrewWordThree.setText(getString(R.string.hebrewWordThree));
 
+        hebrewWordOne.setOnClickListener(this);
+        hebrewWordTwo.setOnClickListener(this);
+        hebrewWordThree.setOnClickListener(this);
+
     }
 
     @Override
@@ -69,6 +76,7 @@ public class FirstFragment extends Fragment {
         super.onResume();
 
     }
+
 
     @OnClick(R.id.buttonAdd)
     void buttonAdd() {
@@ -88,5 +96,16 @@ public class FirstFragment extends Fragment {
     @OnClick(R.id.buttonBox)
     void buttonBox() {
         Toast.makeText(getActivity(), getString(R.string.button_box), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        String textOne;
+        String textTwo;
+        TextView tv = (TextView) v;
+        textOne = (String) ((TextView) v).getText();
+        textTwo = (String) hebrewWordZero.getText();
+        hebrewWordZero.setText(textOne);
+        tv.setText(textTwo);
     }
 }

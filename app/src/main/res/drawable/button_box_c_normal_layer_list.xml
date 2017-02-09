@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@drawable/button_background_box_pink"/>
+    <item android:drawable="@drawable/button_box_b_back_pink_normal"/>
     <item
-        android:drawable="@drawable/button_background_box_white"
+        android:drawable="@drawable/button_box_b_back_white_normal"
         android:bottom="@dimen/padding_large"
         android:left="@dimen/padding_large"
         android:right="@dimen/padding_large"

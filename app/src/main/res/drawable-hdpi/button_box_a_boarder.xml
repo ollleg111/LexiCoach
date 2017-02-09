@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/button_box_b_pressed_layer_list"
+          android:state_pressed="true"/>
+    <item android:drawable="@drawable/button_box_c_normal_layer_list"/>
+</selector>
