@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="ua.dp.oleg.maliy.lexicoach.MainActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/greyLight"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_weight="90"
+        android:background="@drawable/boarder_first"
+        android:orientation="vertical"
+        android:weightSum="100"
+        >
+
+        <ua.dp.oleg.maliy.lexicoach.CustomTextView
+            android:id="@+id/englishWord"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="@color/grey"
+            android:textSize="50sp"
+            android:textStyle="italic"
+            tools:text="@string/englishWordOne"/>
+
+        <RelativeLayout
+            android:id="@+id/secondPart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/padding_big"
+            android:layout_weight="50"
+            android:background="@drawable/boarder_second">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="100">
+
+                <ua.dp.oleg.maliy.lexicoach.CustomTextView
+                    android:id="@+id/hebrewWordZero"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/padding_bigger"
+                    android:layout_weight="50"
+                    android:gravity="center_horizontal|bottom"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    tools:text="@string/hebrewWordZero"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"
+                    android:gravity="center|top"
+                    android:orientation="horizontal">
+
+                    <ua.dp.oleg.maliy.lexicoach.CustomTextView
+                        android:id="@+id/hebrewWordOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_marginTop="@dimen/padding_bigger"
+                        android:textColor="@color/greyLetters"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        tools:text="@string/hebrewWordOne"/>
+
+                    <ua.dp.oleg.maliy.lexicoach.CustomTextView
+                        android:id="@+id/hebrewWordTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_bigger"
+                        android:textColor="@color/greyLetters"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        tools:text="@string/hebrewWordTwo"/>
+
+                    <ua.dp.oleg.maliy.lexicoach.CustomTextView
+                        android:id="@+id/hebrewWordThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginTop="@dimen/padding_bigger"
+                        android:textColor="@color/greyLetters"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        tools:text="@string/hebrewWordThree"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/buttonBell"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/action_button_minus"
+                android:layout_marginRight="@dimen/action_button_minus"
+                android:background="@drawable/button_background"
+                android:src="@drawable/ic_action_bell"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@drawable/boarder_third"
+                android:text="@string/button_add"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="normal"/>
+
+            <Button
+                android:id="@+id/buttonOwn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@drawable/boarder_fourth"
+                android:text="@string/button_own"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="normal"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/buttonBox"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_box_layer_list"
+            android:gravity="center"
+            android:src="@drawable/ic_action_box"/>
+    </RelativeLayout>
+
+</LinearLayout>
