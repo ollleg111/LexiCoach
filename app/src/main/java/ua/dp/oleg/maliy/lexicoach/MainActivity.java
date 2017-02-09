@@ -1,6 +1,7 @@
 package ua.dp.oleg.maliy.lexicoach;
 
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private void startIntroFragment() {
         mFragmentManager
                 .beginTransaction()
+        .setCustomAnimations(R.animator.slide_in_bottom, FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .add(R.id.activity_container, FirstFragment.newInstance())
                 .commit();
     }
