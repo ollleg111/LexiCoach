@@ -188,14 +188,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void setDrawerState(boolean isEnabled) {
-        if (isEnabled) {
-            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-        }
-        else {
-            if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
-                drawerLayout.closeDrawer(GravityCompat.END);
-            }
-            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-        }
+//        if (isEnabled) {
+//            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+//        }
+//        else {
+//            if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+//                drawerLayout.closeDrawer(GravityCompat.END);
+//            }
+//            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+//        }
     }
 }
