@@ -7,8 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -105,7 +105,34 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
         TextView tv = (TextView) v;
         textOne = (String) ((TextView) v).getText();
         textTwo = (String) hebrewWordZero.getText();
+        setAnimation(v);
         hebrewWordZero.setText(textOne);
         tv.setText(textTwo);
+    }
+
+    public void setAnimation(View v) {
+        float xS = v.getX();
+        float yS = v.getY();
+        float xG = hebrewWordZero.getX();
+        float yG = hebrewWordZero.getY();
+
+
+        TranslateAnimation transAnimSend = new TranslateAnimation(
+                0,
+                xG - xS,
+                0,
+                -150);
+        transAnimSend.setDuration(200);
+
+
+        TranslateAnimation animGet = new TranslateAnimation(
+                0,
+                xS - xG,
+                0,
+                150);
+        animGet.setDuration(200);
+        animGet.setStartOffset(100);
+
+        v.setAnimation(transAnimSend);
     }
 }
