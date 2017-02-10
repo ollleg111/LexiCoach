@@ -3,6 +3,8 @@ package ua.dp.oleg.maliy.lexicoach;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,20 +13,22 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadCompleteListener {
 
     private FragmentManager mFragmentManager;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private ActionBarDrawerToggle drawerToggle;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +39,13 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         initToolbar();
         setupDrawerLayout();
-        ButterKnife.bind(this);
 
+        ButterKnife.bind(this);
         drawerToggle = setupDrawerToggle();
         if (savedInstanceState == null) {
             startIntroFragment();
         }
     }
-
     private void startIntroFragment() {
         mFragmentManager
                 .beginTransaction()
@@ -197,5 +200,10 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 //        }
+    }
+
+    @Override
+    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+
     }
 }
