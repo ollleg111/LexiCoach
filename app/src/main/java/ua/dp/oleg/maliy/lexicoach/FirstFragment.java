@@ -84,8 +84,8 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
         sp.setOnLoadCompleteListener(this);
 
         try {
-            soundIdChpoon = sp.load(getActivity().getAssets().openFd("lexiCoach.wav"), 1);
-            soundIdBell = sp.load(getActivity().getAssets().openFd("bell.wav"), 1);
+            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
+            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
         } catch (IOException e) {
             e.printStackTrace();
         }
