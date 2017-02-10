@@ -1,10 +1,14 @@
 package ua.dp.oleg.maliy.lexicoach;
 
+import android.animation.Animator;
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
 import android.app.Fragment;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,14 +95,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
         }
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-    }
-
-
-    @OnClick(R.id.buttonAdd)
+     @OnClick(R.id.buttonAdd)
     void buttonAdd() {
         Toast.makeText(getActivity(), getString(R.string.button_add), Toast.LENGTH_SHORT).show();
         sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
@@ -124,25 +121,27 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
 
     @Override
     public void onClick(View v) {
-        String textOne, textTwo;
         TextView tv = (TextView) v;
-        textOne = (String) ((TextView) v).getText();
-        textTwo = (String) hebrewWordZero.getText();
-        setAnimation(v);
-        hebrewWordZero.setText(textOne);
-        tv.setText(textTwo);
+        String textV, textZero;
+
+        textV = (String) ((TextView) v).getText();
+        textZero = (String) hebrewWordZero.getText();
+
+        setAnimation(v,textV);
+        tv.setText(textZero);
         sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
     }
-
     @Override
     public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
     }
 
-    public void setAnimation(View v) {
+    public void setAnimation(final View v, final String textOne) {
         float xS = v.getX();
         float yS = v.getY();
         float xG = hebrewWordZero.getX();
         float yG = hebrewWordZero.getY();
+        final int sendViewColor = ((TextView) v).getCurrentTextColor();
+        int getViewColor = hebrewWordZero.getCurrentTextColor();
 
 
         TranslateAnimation transAnimSend = new TranslateAnimation(
@@ -152,15 +151,45 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
                 -150);
         transAnimSend.setDuration(200);
 
+        ValueAnimator valueAnimator = new ValueAnimator();
+        valueAnimator.setIntValues(sendViewColor, getViewColor);
+        valueAnimator.setEvaluator(new ArgbEvaluator());
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
 
-        TranslateAnimation animGet = new TranslateAnimation(
-                0,
-                xS - xG,
-                0,
-                150);
-        animGet.setDuration(200);
-        animGet.setStartOffset(100);
+                ((TextView) v).setTextColor((Integer) valueAnimator.getAnimatedValue());
+                Log.d("click Update", (String) hebrewWordZero.getText());
+            }
+        });
+        valueAnimator.setDuration(200);
 
+        valueAnimator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                Log.d("click Start", (String) hebrewWordZero.getText());
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Log.d("click End", (String) hebrewWordZero.getText());
+
+                ((TextView) v).setTextColor(sendViewColor);
+                hebrewWordZero.setText(textOne);
+                Log.d("click End2", (String) hebrewWordZero.getText());
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        valueAnimator.start();
         v.setAnimation(transAnimSend);
     }
 }
