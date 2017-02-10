@@ -136,23 +136,23 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
     }
 
     public void setAnimation(final View v, final String textOne) {
-        float xS = v.getX();
-        float yS = v.getY();
-        float xG = hebrewWordZero.getX();
-        float yG = hebrewWordZero.getY();
-        final int sendViewColor = ((TextView) v).getCurrentTextColor();
-        int getViewColor = hebrewWordZero.getCurrentTextColor();
+        float xV = v.getX();
+        float yV = v.getY();
+        float xZero = hebrewWordZero.getX();
+        float yZero = hebrewWordZero.getY();
+        final int viewColorV = ((TextView) v).getCurrentTextColor();
+        final int viewColorZero = hebrewWordZero.getCurrentTextColor();
 
 
         TranslateAnimation transAnimSend = new TranslateAnimation(
                 0,
-                xG - xS,
+                xZero - xV,
                 0,
                 -150);
         transAnimSend.setDuration(200);
 
         ValueAnimator valueAnimator = new ValueAnimator();
-        valueAnimator.setIntValues(sendViewColor, getViewColor);
+        valueAnimator.setIntValues(viewColorV, viewColorZero);
         valueAnimator.setEvaluator(new ArgbEvaluator());
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -174,7 +174,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
             public void onAnimationEnd(Animator animation) {
                 Log.d("click End", (String) hebrewWordZero.getText());
 
-                ((TextView) v).setTextColor(sendViewColor);
+                ((TextView) v).setTextColor(viewColorV);
                 hebrewWordZero.setText(textOne);
                 Log.d("click End2", (String) hebrewWordZero.getText());
             }
