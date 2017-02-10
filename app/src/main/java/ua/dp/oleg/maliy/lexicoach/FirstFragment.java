@@ -94,7 +94,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
     @Override
     public void onResume() {
         super.onResume();
-
     }
 
 
@@ -151,7 +150,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
                 0,
                 -150);
         transAnimSend.setDuration(200);
-
 
         TranslateAnimation animGet = new TranslateAnimation(
                 0,
