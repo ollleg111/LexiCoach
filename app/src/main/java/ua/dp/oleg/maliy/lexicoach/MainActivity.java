@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadCompleteListener {
+public class MainActivity extends AppCompatActivity {
 
     private FragmentManager mFragmentManager;
     private DrawerLayout drawerLayout;
@@ -41,10 +41,11 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
             startIntroFragment();
         }
     }
+
     private void startIntroFragment() {
         mFragmentManager
                 .beginTransaction()
-        .setCustomAnimations(R.animator.slide_in_bottom, FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .setCustomAnimations(R.animator.slide_in_bottom, FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .add(R.id.activity_container, FirstFragment.newInstance())
                 .commit();
     }
@@ -124,56 +125,48 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
                 switch (id) {
                     case R.id.menu_item_show_news:
                         Toast.makeText(MainActivity.this, getString(R.string.show_news), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
 //                        startActivity(i);
 //                        finish();
                         break;
                     case R.id.menu_item_show_feedback:
                         Toast.makeText(MainActivity.this, getString(R.string.show_feedback), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_messages:
                         Toast.makeText(MainActivity.this, getString(R.string.show_messages), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_friends:
                         Toast.makeText(MainActivity.this, getString(R.string.show_friends), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_communities:
                         Toast.makeText(MainActivity.this, getString(R.string.show_communities), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_bookmarks:
                         Toast.makeText(MainActivity.this, getString(R.string.show_bookmarks), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_search:
                         Toast.makeText(MainActivity.this, getString(R.string.show_search), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
                         break;
                     case R.id.menu_item_show_settings:
                         Toast.makeText(MainActivity.this, getString(R.string.show_settings), Toast.LENGTH_SHORT).show();
-                        setDrawerState(false);
 //                        Intent j = new Intent(getApplicationContext(), SecondActivity.class);
 //                        startActivity(j);
 //                        finish();
@@ -183,23 +176,5 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
                 return true;
             }
         });
-
-
-    }
-    public void setDrawerState(boolean isEnabled) {
-//        if (isEnabled) {
-//            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-//        }
-//        else {
-//            if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
-//                drawerLayout.closeDrawer(GravityCompat.END);
-//            }
-//            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-//        }
-    }
-
-    @Override
-    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-
     }
 }

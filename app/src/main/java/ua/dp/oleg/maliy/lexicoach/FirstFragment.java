@@ -1,14 +1,10 @@
 package ua.dp.oleg.maliy.lexicoach;
 
-import android.animation.Animator;
-import android.animation.ArgbEvaluator;
-import android.animation.ValueAnimator;
 import android.app.Fragment;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,7 +91,14 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Sou
         }
     }
 
-     @OnClick(R.id.buttonAdd)
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+
+    @OnClick(R.id.buttonAdd)
     void buttonAdd() {
         Toast.makeText(getActivity(), getString(R.string.button_add), Toast.LENGTH_SHORT).show();
         sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
