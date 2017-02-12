@@ -1,9 +1,6 @@
 package ua.dp.oleg.maliy.lexicoach;
 
-import android.media.AudioManager;
 import android.media.SoundPool;
-
-import java.io.IOException;
 
 public class SoundCall implements SoundPool.OnLoadCompleteListener  {
 
