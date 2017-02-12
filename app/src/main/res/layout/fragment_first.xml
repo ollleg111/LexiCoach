@@ -154,13 +154,13 @@
         <ImageButton
             android:id="@+id/buttonBox"
             android:layout_width="56dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/button_box_a_boarder"
             android:gravity="center"
-            android:src="@drawable/ic_action_box" />
+            android:src="@drawable/ic_box_middle_grey" />
     </RelativeLayout>
 
 </LinearLayout>
