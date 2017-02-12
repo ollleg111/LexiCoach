@@ -56,7 +56,6 @@
                 android:layout_above="@id/space"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/padding_bigger"
-                android:gravity="center_horizontal|bottom"
                 android:textColor="@color/white"
                 android:textSize="35sp"
                 android:textStyle="bold"
@@ -64,15 +63,16 @@
 
             <ua.dp.oleg.maliy.lexicoach.CustomTextView
                 android:id="@+id/hebrewWordTwo"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_widthPercent="33%"
                 android:layout_below="@id/space"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/padding_bigger"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:textColor="@color/greyLetters"
                 android:textSize="25sp"
                 android:textStyle="bold"
+                app:layout_widthPercent="33%"
                 tools:text="@string/hebrewWordTwo" />
 
             <ua.dp.oleg.maliy.lexicoach.CustomTextView
@@ -80,7 +80,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/space"
-                android:layout_marginRight="@dimen/margin_small"
                 android:layout_marginTop="@dimen/padding_bigger"
                 android:layout_toStartOf="@id/hebrewWordTwo"
                 android:textColor="@color/greyLetters"
@@ -93,8 +92,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/space"
-                android:layout_marginLeft="@dimen/margin_small"
-
                 android:layout_marginTop="@dimen/padding_bigger"
                 android:layout_toEndOf="@id/hebrewWordTwo"
                 android:textColor="@color/greyLetters"
