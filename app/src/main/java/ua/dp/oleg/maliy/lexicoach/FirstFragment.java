@@ -48,8 +48,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener,
     protected CustomTextView hebrewWordTwo;
     @BindView(R.id.hebrewWordThree)
     protected CustomTextView hebrewWordThree;
-    @BindView(R.id.secondPart)
-    protected RelativeLayout secondLayout;
 
     private SoundPool sp;
     private int soundIdChpoon;
