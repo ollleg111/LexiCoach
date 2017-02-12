@@ -1,30 +1,53 @@
 package ua.dp.oleg.maliy.lexicoach;
 
-import android.media.SoundPool;
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 
-public class SoundCall implements SoundPool.OnLoadCompleteListener  {
+public class SoundCall {
 
-//    private SoundPool sp;
-//
-//    private int soundIdChpoon;
-//    private int soundIdBell;
-//
-//
-//
-//    private void sound() {
-//        sp = new SoundPool(Const.MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
-//        sp.setOnLoadCompleteListener(this);
-//
-//        try {
-//            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
-//            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-    @Override
-    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+    public static AssetFileDescriptor soundClick = null;
+    public static AssetFileDescriptor soundBell = null;
 
+    private static MediaPlayer mp = null;
+
+    public static void audioPlayer(int soundType, Context context) {
+
+        mp = new MediaPlayer();
+        AssetFileDescriptor soundFileDescriptor = null;
+
+        try {
+            if (soundClick == null) {
+                soundClick = context.getResources()
+                        .openRawResourceFd(R.raw.sound_click);
+            }
+            if (soundBell == null) {
+                soundBell = context.getResources()
+                        .openRawResourceFd(R.raw.sound_bell);
+            }
+            switch (soundType) {
+                case Const.SOUND_CLICK:
+                    soundFileDescriptor = soundClick;
+                    break;
+                case Const.SOUND_BELL:
+                    soundFileDescriptor = soundBell;
+                    break;
+            }
+            mp.reset();
+            mp.setDataSource(soundFileDescriptor.getFileDescriptor(),
+                    soundFileDescriptor.getStartOffset(),
+                    soundFileDescriptor.getDeclaredLength());
+            mp.prepare();
+            mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+
+                @Override
+                public void onPrepared(MediaPlayer player) {
+                    player.seekTo(0);
+                    player.start();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

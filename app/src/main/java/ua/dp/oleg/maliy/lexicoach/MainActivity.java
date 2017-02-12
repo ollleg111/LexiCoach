@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ActionBarDrawerToggle drawerToggle;
 
+    SoundCall mSoundCall;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +60,15 @@ public class MainActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_grey);
             actionBar.setDisplayHomeAsUpEnabled(true);
+
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 //        return super.onOptionsItemSelected(item);
+
+        mSoundCall.audioPlayer(Const.SOUND_CLICK, getApplicationContext());
 
         int id = item.getItemId();
 
@@ -120,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
                 int id = menuItem.getItemId();
+
+                mSoundCall.audioPlayer(Const.SOUND_CLICK, getApplicationContext());
 
                 switch (id) {
                     case R.id.menu_item_show_news:

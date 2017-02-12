@@ -3,8 +3,6 @@ package ua.dp.oleg.maliy.lexicoach;
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.app.Fragment;
-import android.media.AudioManager;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,19 +14,15 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FirstFragment extends Fragment implements View.OnClickListener,
-        SoundPool.OnLoadCompleteListener {
-    private final int DURATION = 300;
+public class FirstFragment extends Fragment implements View.OnClickListener /*,
+        SoundPool.OnLoadCompleteListener*/ {
 
     @BindView(R.id.buttonAdd)
     protected Button buttonAdd;
@@ -49,9 +43,11 @@ public class FirstFragment extends Fragment implements View.OnClickListener,
     @BindView(R.id.hebrewWordThree)
     protected CustomTextView hebrewWordThree;
 
-    private SoundPool sp;
-    private int soundIdChpoon;
-    private int soundIdBell;
+//    private SoundPool sp;
+//    private int soundIdChpoon;
+//    private int soundIdBell;
+
+    SoundCall mSoundCall;
 
     public FirstFragment() {
     }
@@ -85,48 +81,53 @@ public class FirstFragment extends Fragment implements View.OnClickListener,
         hebrewWordTwo.setOnClickListener(this);
         hebrewWordThree.setOnClickListener(this);
 
-        sound();
+//        sound();
     }
 
-    private void sound() {
-        sp = new SoundPool(Const.MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
-        sp.setOnLoadCompleteListener(this);
-
-        try {
-            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
-            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void sound() {
+//        sp = new SoundPool(Const.MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
+//        sp.setOnLoadCompleteListener(this);
+//
+//        try {
+//            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
+//            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @OnClick(R.id.buttonAdd)
     void buttonAdd() {
         Toast.makeText(getActivity(), getString(R.string.button_add), Toast.LENGTH_SHORT).show();
-        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
     }
 
     @OnClick(R.id.buttonOwn)
     void buttonOwn() {
         Toast.makeText(getActivity(), getString(R.string.button_own), Toast.LENGTH_SHORT).show();
-        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
     }
 
     @OnClick(R.id.buttonBell)
     void buttonBell() {
         Toast.makeText(getActivity(), getString(R.string.button_bell), Toast.LENGTH_SHORT).show();
-        sp.play(soundIdBell, 1, 1, 0, 0, 2);
+//        sp.play(soundIdBell, 1, 1, 0, 0, 2);
+        mSoundCall.audioPlayer(Const.SOUND_BELL, getActivity().getApplicationContext());
     }
 
     @OnClick(R.id.buttonBox)
     void buttonBox() {
         Toast.makeText(getActivity(), getString(R.string.button_box), Toast.LENGTH_SHORT).show();
-        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
     }
 
     @Override
     public void onClick(View v) {
-        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
         setAnimation(v, hebrewWordZero);
     }
 
@@ -145,7 +146,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener,
         );
         set.addAnimation(translateAnimation);
 
-        set.setDuration(DURATION);
+        set.setDuration(Const.DURATION);
         set.setAnimationListener(new Animation.AnimationListener() {
 
             ValueAnimator valueAnimator;
@@ -162,7 +163,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener,
                         ((TextView) actionView).setTextColor((Integer) valueAnimator.getAnimatedValue());
                     }
                 });
-                valueAnimator.setDuration(DURATION);
+                valueAnimator.setDuration(Const.DURATION);
                 valueAnimator.start();
             }
 
@@ -184,7 +185,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener,
         actionView.startAnimation(set);
     }
 
-    @Override
-    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-    }
+//    @Override
+//    public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+//    }
 }
