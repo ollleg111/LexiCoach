@@ -11,7 +11,25 @@ public class SoundCall {
 
     private static MediaPlayer mp = null;
 
+//    public static void init(Context context){
+//
+//    }
+
     public static void audioPlayer(int soundType, Context context) {
+
+
+//        sp = new SoundPool(Const.MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
+//        sp.setOnLoadCompleteListener(this);
+//
+//        try {
+//            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
+//            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+//        sp.play(soundIdBell, 1, 1, 0, 0, 2);
+
 
         mp = new MediaPlayer();
         AssetFileDescriptor soundFileDescriptor = null;
@@ -51,3 +69,34 @@ public class SoundCall {
         }
     }
 }
+//    private void createSoundPool(List<PageContent> contentList) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            createNewSoundPool();
+//        } else {
+//            createOldSoundPool();
+//        }
+//        sp.setOnLoadCompleteListener(this);
+//        soundWin = sp.load(getContext(), R.raw.win_sound, 1);
+//        soundFail = sp.load(getContext(), R.raw.fail_sound, 1);
+//        soundsIds = new ArrayList<>();
+//        for (int i = 0; i < contentList.size(); i++) {
+//            int soundId = sp.load(getContext(), contentList.get(i).getSound(), 1);
+//            soundsIds.add(soundId);
+//        }
+//    }
+//
+//    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+//    protected void createNewSoundPool() {
+//        AudioAttributes attributes = new AudioAttributes.Builder()
+//                .setUsage(AudioAttributes.USAGE_GAME)
+//                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+//                .build();
+//        sp = new SoundPool.Builder()
+//                .setAudioAttributes(attributes)
+//                .build();
+//    }
+//
+//    @SuppressWarnings("deprecation")
+//    protected void createOldSoundPool() {
+//        sp = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
+//    }
