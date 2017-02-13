@@ -10,16 +10,17 @@
     android:weightSum="100"
     tools:context="ua.dp.oleg.maliy.lexicoach.MainActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/greyLight" />
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:background="@color/greyLight" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="@dimen/activity_horizontal_margin"
-        android:layout_weight="90"
+        android:layout_weight="100"
+        android:elevation="4dp"
         android:background="@drawable/boarder_first"
         android:orientation="vertical"
         android:weightSum="100">
@@ -106,7 +107,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="@dimen/action_button_minus"
-                android:layout_marginRight="@dimen/action_button_minus"
+                android:layout_marginEnd="@dimen/action_button_minus"
                 android:background="@drawable/button_bell_background"
                 android:src="@drawable/ic_action_bell" />
 
@@ -117,8 +118,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_height="?actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -153,8 +153,8 @@
 
         <ImageButton
             android:id="@+id/buttonBox"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
@@ -162,5 +162,7 @@
             android:gravity="center"
             android:src="@drawable/ic_box_middle_grey" />
     </RelativeLayout>
+
+
 
 </LinearLayout>
