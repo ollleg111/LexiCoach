@@ -160,9 +160,7 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/button_box_a_boarder"
             android:gravity="center"
-            android:src="@drawable/ic_box_middle_grey" />
+            android:src="@drawable/ic_action_box" />
     </RelativeLayout>
-
-
 
 </LinearLayout>
