@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 //        return super.onOptionsItemSelected(item);
 
-        mSoundCall.audioPlayer(Const.SOUND_CLICK, getApplicationContext());
+//        mSoundCall.audioPlayer(Const.SOUND_CLICK, getApplicationContext());
+        SoundCall.init(MainActivity.this).audioPlayer(Const.SOUND_CLICK);
 
         int id = item.getItemId();
 
@@ -126,7 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
                 int id = menuItem.getItemId();
 
-                mSoundCall.audioPlayer(Const.SOUND_CLICK, getApplicationContext());
+//                SoundCall.audioPlayer(Const.SOUND_CLICK, getApplicationContext());
+                SoundCall.init(MainActivity.this).audioPlayer(Const.SOUND_CLICK);
 
                 switch (id) {
                     case R.id.menu_item_show_news:

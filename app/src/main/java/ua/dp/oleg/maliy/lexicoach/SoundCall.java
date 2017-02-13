@@ -9,44 +9,17 @@ public class SoundCall {
     public static AssetFileDescriptor soundClick = null;
     public static AssetFileDescriptor soundBell = null;
 
+    private static SoundCall sSoundCall;
+
     private static MediaPlayer mp = null;
 
-//    public static void init(Context context) {
-//
-//        if (mp == null) {
-//            mp = new MediaPlayer();
-//            AssetFileDescriptor soundFileDescriptor = null;
-//            if (soundClick == null) {
-//                soundClick = context.getResources()
-//                        .openRawResourceFd(R.raw.sound_click);
-//            }
-//            if (soundBell == null) {
-//                soundBell = context.getResources()
-//                        .openRawResourceFd(R.raw.sound_bell);
-//            }
-//        }
-//    }
+    public static SoundCall init(Context context) {
 
-    public static void audioPlayer(int soundType, Context context) {
+        if (sSoundCall == null) {
+            mp = new MediaPlayer();
 
+            sSoundCall = new SoundCall();
 
-//        sp = new SoundPool(Const.MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
-//        sp.setOnLoadCompleteListener(this);
-//
-//        try {
-//            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
-//            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
-//        sp.play(soundIdBell, 1, 1, 0, 0, 2);
-
-
-        mp = new MediaPlayer();
-        AssetFileDescriptor soundFileDescriptor = null;
-
-        try {
             if (soundClick == null) {
                 soundClick = context.getResources()
                         .openRawResourceFd(R.raw.sound_click);
@@ -55,6 +28,25 @@ public class SoundCall {
                 soundBell = context.getResources()
                         .openRawResourceFd(R.raw.sound_bell);
             }
+        }
+        return sSoundCall;
+    }
+
+    public static void audioPlayer(int soundType) {
+
+//        mp = new MediaPlayer();
+//        AssetFileDescriptor soundFileDescriptor = null;
+
+        try {
+            AssetFileDescriptor soundFileDescriptor = null;
+//            if (soundClick == null) {
+//                soundClick = context.getResources()
+//                        .openRawResourceFd(R.raw.sound_click);
+//            }
+//            if (soundBell == null) {
+//                soundBell = context.getResources()
+//                        .openRawResourceFd(R.raw.sound_bell);
+//            }
             switch (soundType) {
                 case Const.SOUND_CLICK:
                     soundFileDescriptor = soundClick;
@@ -81,6 +73,20 @@ public class SoundCall {
         }
     }
 }
+//        sp = new SoundPool(Const.MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
+//        sp.setOnLoadCompleteListener(this);
+//
+//        try {
+//            soundIdChpoon = sp.load(getActivity().getAssets().openFd("LexiCoach.wav"), 1);
+//            soundIdBell = sp.load(getActivity().getAssets().openFd("Bell.wav"), 1);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
+//        sp.play(soundIdBell, 1, 1, 0, 0, 2);
+
+
+
 //    private void createSoundPool(List<PageContent> contentList) {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            createNewSoundPool();

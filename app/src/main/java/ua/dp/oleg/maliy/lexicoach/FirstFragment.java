@@ -47,7 +47,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener /*,
 //    private int soundIdChpoon;
 //    private int soundIdBell;
 
-    SoundCall mSoundCall;
+//    SoundCall mSoundCall;
 
     public FirstFragment() {
     }
@@ -100,34 +100,39 @@ public class FirstFragment extends Fragment implements View.OnClickListener /*,
     void buttonAdd() {
         Toast.makeText(getActivity(), getString(R.string.button_add), Toast.LENGTH_SHORT).show();
 //        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
-        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+//        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+        SoundCall.init(getActivity()).audioPlayer(Const.SOUND_CLICK);
     }
 
     @OnClick(R.id.buttonOwn)
     void buttonOwn() {
         Toast.makeText(getActivity(), getString(R.string.button_own), Toast.LENGTH_SHORT).show();
 //        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
-        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+//        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+        SoundCall.init(getActivity()).audioPlayer(Const.SOUND_CLICK);
     }
 
     @OnClick(R.id.buttonBell)
     void buttonBell() {
         Toast.makeText(getActivity(), getString(R.string.button_bell), Toast.LENGTH_SHORT).show();
 //        sp.play(soundIdBell, 1, 1, 0, 0, 2);
-        mSoundCall.audioPlayer(Const.SOUND_BELL, getActivity().getApplicationContext());
+//        mSoundCall.audioPlayer(Const.SOUND_BELL, getActivity().getApplicationContext());
+        SoundCall.init(getActivity()).audioPlayer(Const.SOUND_BELL);
     }
 
     @OnClick(R.id.buttonBox)
     void buttonBox() {
         Toast.makeText(getActivity(), getString(R.string.button_box), Toast.LENGTH_SHORT).show();
 //        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
-        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+//        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+        SoundCall.init(getActivity()).audioPlayer(Const.SOUND_CLICK);
     }
 
     @Override
     public void onClick(View v) {
 //        sp.play(soundIdChpoon, 1, 1, 0, 0, 2);
-        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+//        mSoundCall.audioPlayer(Const.SOUND_CLICK, getActivity().getApplicationContext());
+        SoundCall.init(getActivity()).audioPlayer(Const.SOUND_CLICK);
         setAnimation(v, hebrewWordZero);
     }
 
