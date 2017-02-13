@@ -11,8 +11,20 @@ public class SoundCall {
 
     private static MediaPlayer mp = null;
 
-//    public static void init(Context context){
+//    public static void init(Context context) {
 //
+//        if (mp == null) {
+//            mp = new MediaPlayer();
+//            AssetFileDescriptor soundFileDescriptor = null;
+//            if (soundClick == null) {
+//                soundClick = context.getResources()
+//                        .openRawResourceFd(R.raw.sound_click);
+//            }
+//            if (soundBell == null) {
+//                soundBell = context.getResources()
+//                        .openRawResourceFd(R.raw.sound_bell);
+//            }
+//        }
 //    }
 
     public static void audioPlayer(int soundType, Context context) {
