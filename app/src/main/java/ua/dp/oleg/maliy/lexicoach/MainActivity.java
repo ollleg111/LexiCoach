@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ActionBarDrawerToggle drawerToggle;
 
-    SoundCall mSoundCall;
+//    SoundCall mSoundCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
