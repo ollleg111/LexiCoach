@@ -6,7 +6,7 @@ android {
         config {
             keyAlias 'desktopKey'
             keyPassword 'q2301299266'
-            storeFile file('C:/Users/Owner/Desktop/desktopKey.jks')
+            storeFile file('//home/owner/Desktop/desktopKey.jks')
             storePassword 'q2301299266'
         }
     }
